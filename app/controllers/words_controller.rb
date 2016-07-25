@@ -17,6 +17,12 @@ class WordsController < ApplicationController
 
 	end
 
+	def show
+		@arr = params[:arr]
+		@word_map = params[:word_map]
+		print(param[:arr])
+	end
+
 	def parse(file_data)
 		data = file_data.read().split("\n")
 
@@ -78,6 +84,8 @@ class WordsController < ApplicationController
 		
 		print(arr[0])
 		print(word_map[arr[0]].to_a)
+
+		render "show", :locals => {:arr => arr, :word_map => word_map}
 
 	end
 
