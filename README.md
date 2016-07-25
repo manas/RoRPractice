@@ -6,4 +6,7 @@ This RoR practice application takes a file with words and shows compound words a
 
 * Rails 5.0.0
 
+* Tried deploying on Heroku but the application is crashing right now. 
+
+Heroku link - https://compoundwords.herokuapp.com/
 
