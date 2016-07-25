@@ -1,41 +1,47 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
- 
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Grid Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="grid.css" rel="stylesheet">
+<head>
 
 
-  </head>
+  <link rel="icon" href="../../favicon.ico">
 
-  <body>
-    <div class="container">
+  <title>Grid Template for Bootstrap</title>
 
-      <div class="page-header">
-        <h1>Compound Words Demo</h1>
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="grid.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Compound Words Demo</h1>
       <p class="lead">Upload a words file to see the compound words that are made up by other words in the same file</p>
-      </div> 
+    </div> 
 
-      <h3>Compound words</h3>
-      <p>Listing all compound words</p>
-      <% @arr.each do |word| %>
-      <div class="row">
-        <div class="col-md-4"><%= word%></div>
-        <div class="col-md-8"><%= @word_map[word].to_a%></div>
-      </div>
-      <%end%>
+    <h3>Compound words</h3>
+    <p>Listing all compound words</p>
+    <div class="row">
+      <div class="col-md-3"><strong>Word</strong></div>
+      <div class="col-md-7"><strong>Subset words</strong></div>
+      <div class="col-md-2"><strong>Length of word</strong></div>
+    </div>
+    <% @arr.each do |word| %>
+    <div class="row"> 
+      <div class="col-md-3"><%= word%></div>
+      <div class="col-md-7"><%= @word_map[word].to_a%></div>
+      <div class="col-md-2"><%= word.size()%></div>
+    </div>
+    <%end%>
 
-    </div> <!-- /container -->
-    
-    <script src="bootstrap.min.js"></script>
-  </body>
+  </div> <!-- /container -->
+
+  <script src="bootstrap.min.js"></script>
+</body>
 </html>

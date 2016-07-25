@@ -1,5 +1,5 @@
-class WordsController < ApplicationController
 
+class WordsController < ApplicationController
 	def index
 		@word = Word.new
 	end
@@ -16,7 +16,9 @@ class WordsController < ApplicationController
 				print("Input file empty")
 			end
 		end
-			
+	end
+
+	def show
 
 	end
 
