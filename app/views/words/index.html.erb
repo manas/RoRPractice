@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+	<link rel="icon" href="../../favicon.ico">
+
+	<title>Grid Template for Bootstrap</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="grid.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Compound Words Demo</h1>
+			<p class="lead">Upload a words file to see the compound words that are made up by other words in the same file</p>
+			<h2>File upload</h2>
+
+			<%if @word.nil?%>
+				<p>Upload a valid file</p>
+			<%else%>
+				<%= form_for @word do |f| %>
+					<div class="row">
+						<div class="col-md-4"><%= f.file_field :datafile , class: "form-control"%>  </div>
+						<div class="col-md-8"><%= f.submit 'Upload', class: "btn btn-default btn-primary"%> </div>
+					</div>
+
+				<% end %>
+			<% end %>
+
+		</div>
+
+	</div> <!-- /container -->
+
+
+
+	<script src="bootstrap.min.js"></script>
+</body>
+</html>
