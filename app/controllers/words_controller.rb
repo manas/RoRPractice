@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
-	def new
+
+	def index
 		@word = Word.new
 	end
 
@@ -17,10 +18,6 @@ class WordsController < ApplicationController
 		end
 			
 
-	end
-
-	def show
-		
 	end
 
 	def parse(file_data)
@@ -79,11 +76,6 @@ class WordsController < ApplicationController
 		end
 		
 		@arr = compound_words.to_a.sort{|x,y| y.length - x.length}
-		
-		print(compound_words.size())
-		
-		print(@arr[0])
-		print(@word_map[@arr[0]].to_a)
 
 		render "show"
 
