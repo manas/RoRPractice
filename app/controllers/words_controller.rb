@@ -29,7 +29,7 @@ class WordsController < ApplicationController
 		input_words = Set.new
 		compound_words = Set.new
 		possible_words = Queue.new
-		word_map = Hash.new
+		@word_map = Hash.new
 		
 		(0..data.size() - 1).each do |main_index|
 			curr_word = data[main_index].strip
@@ -43,7 +43,7 @@ class WordsController < ApplicationController
 						sub_words = Set.new
 						sub_words.add(prefix)
 
-						word_map[curr_word] = sub_words
+						@word_map[curr_word] = sub_words
 					end
 				end
 			
@@ -61,7 +61,7 @@ class WordsController < ApplicationController
 
 			if input_words.include?(suffix)
 				compound_words.add(cword)
-				word_map[cword].add(suffix)
+				@word_map[cword].add(suffix)
 
 
 			else
@@ -71,21 +71,21 @@ class WordsController < ApplicationController
 						prefix = prefix + suffix[i]
 						if input_words.include?(prefix)
 							possible_words.push(cword + "#" + suffix[prefix.size(), suffix.size()])
-							word_map[cword].add(prefix)
+							@word_map[cword].add(prefix)
 						end
 					end
 				end
 			end
 		end
 		
-		arr = compound_words.to_a.sort{|x,y| y.length - x.length}
+		@arr = compound_words.to_a.sort{|x,y| y.length - x.length}
 		
 		print(compound_words.size())
 		
-		print(arr[0])
-		print(word_map[arr[0]].to_a)
+		print(@arr[0])
+		print(@word_map[@arr[0]].to_a)
 
-		render "show", :locals => {:arr => arr, :word_map => word_map}
+		render "show"
 
 	end
 
