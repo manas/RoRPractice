@@ -4,23 +4,23 @@ class WordsController < ApplicationController
 	end
 
 	def create 
-		file_data = params[:word][:datafile]
+		unless params[:word].nil?
+			file_data = params[:word][:datafile]
 
-		
-		if file_data.respond_to?(:read)
+			
+			if file_data.respond_to?(:read)
 
-			parse(file_data)
-		else
-			print("Input file empty")
+				parse(file_data)
+			else
+				print("Input file empty")
+			end
 		end
-		
+			
 
 	end
 
 	def show
-		@arr = params[:arr]
-		@word_map = params[:word_map]
-		print(param[:arr])
+		
 	end
 
 	def parse(file_data)
