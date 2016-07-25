@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+ 
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Grid Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="grid.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Bootstrap grid examples</h1>
+        <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system.</p>
+      </div>
+
+
+
+    
+
+      <h3>Compound words</h3>
+      <p>Listing all compound words</p>
+      <% @arr.each do |word| %>
+      <div class="row">
+        <div class="col-md-4"><%= word%></div>
+        <div class="col-md-8"><%= @word_map[word].to_a%></div>
+      </div>
+      <%end%>
+      
+      <h3>Full width, single column</h3>
+      <p class="text-warning">No grid classes are necessary for full-width elements.</p>
+
+      <hr>
+
+     
+
+
+    </div> <!-- /container -->
+
+
+    
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
