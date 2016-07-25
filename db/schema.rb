@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20160723215051) do
 
-  create_table "inputdata", force: :cascade do |t|
-    t.string   "datafile"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "words", force: :cascade do |t|
     t.string   "word"

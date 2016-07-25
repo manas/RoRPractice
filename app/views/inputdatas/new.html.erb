@@ -1,7 +1,0 @@
-<h1>Inputdatas#new</h1>
-
-<%= form_for @inputdatum.new, :url => inputdatas_new_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :datafile %>
-  <%=form.submit 'upload'%>
-<% end %>
-<p>Find me in app/views/inputdatas/new.html.erb</p>

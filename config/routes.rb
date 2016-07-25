@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
-  get 'inputdatas/index'
-
-  get 'inputdatas/new'
-
-  get 'inputdatas/create'
-
-  get 'inputdatas/destroy'
+ 
 
   get 'welcome/index'
-
-  
 
   root 'welcome#index'
 
