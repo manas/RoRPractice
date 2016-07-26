@@ -8,6 +8,7 @@ This RoR practice application takes a file with words and shows compound words a
 
 * Application is deployed on Heroku, link is below
 
+*Heroku free instance sleeps after 30 minutes of inactivity, so when launched for the first time after long, it may take some time*
 
 Heroku link - https://compoundwords.herokuapp.com/
 
