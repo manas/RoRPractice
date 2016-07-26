@@ -26,16 +26,33 @@
 			<h2>File upload</h2>
 
 			<%if @word.nil?%>
-				<p>Upload a valid file</p>
+			<p>Upload a valid file</p>
 			<%else%>
-				<%= form_for @word do |f| %>
-					<div class="row">
-						<div class="col-md-4"><%= f.file_field :datafile , class: "form-control"%>  </div>
-						<div class="col-md-8"><%= f.submit 'Upload', class: "btn btn-default btn-primary"%> </div>
-					</div>
+			<%= form_for @word do |f| %>
+			<div class="row">
+				<div class="col-md-4"><%= f.file_field :datafile , class: "form-control"%>  </div>
+				<div class="col-md-8"><%= f.submit 'Upload', class: "btn btn-default btn-primary"%> </div>
+			</div>
 
-				<% end %>
 			<% end %>
+			<% end %>
+
+			<div class="row">
+				<div class="col-md-12"><strong>Sample input file</strong></div>
+				<div class="col-md-12">
+					cat<br>
+					cats<br>
+					catsdogcats<br>
+					dog<br>
+					dogcatsdog<br>
+					hippopotamuses<br>
+					rat<br>
+					ratcatdogcat
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">Longest Compound word in this case is: <strong>ratcatdogcat</strong>, with length 12</div>
+			</div>
 
 		</div>
 
@@ -43,6 +60,6 @@
 
 
 
-	<script src="bootstrap.min.js"></script>
-</body>
-</html>
+		<script src="bootstrap.min.js"></script>
+	</body>
+	</html>
